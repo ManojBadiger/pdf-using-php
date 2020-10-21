@@ -1,0 +1,339 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <title>pdf Form</title>
+</head>
+<body>
+<html lang="en">
+  
+<div class="table-title">
+<!-- Heading -->
+<h3 style="text-align:center;color:black"><strong><u>Offer Letter</u></strong></h3>
+<br>
+
+<div class="jumbotron" style="height:65px; width:500px; padding-top:5px; ">
+<h4 style="font-size:14px; text-align:center;font-weight:normal;">Geneate  an offer letter for a new employee by entering the required data below.You can modify the default offer letter template by selecting the option on the right sidebar.</h4>
+
+</div>
+
+
+
+
+</div>
+
+  <style>
+  /* styles */
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+
+body {
+  
+  font-family: "Roboto", helvetica, arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+
+div.table-title {
+   display: block;
+  margin: auto;
+  max-width: 600px;
+  padding:5px;
+  width: 100%;
+}
+
+.table-title h3 {
+   color: #fafafa;
+   font-size: 30px;
+   font-weight: 400;
+   font-style:normal;
+   font-family: "Roboto", helvetica, arial, sans-serif;
+   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+   text-transform:uppercase;
+}
+
+
+/*** Table Styles **/
+
+.table-fill {
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  height: 320px;
+  margin: auto;
+  max-width: 600px;
+  padding:5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: float 5s infinite;
+}
+ 
+th {
+  color:#D5DDE5;;
+  background:#1b1e24;
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size:23px;
+  font-weight: 100;
+  padding:24px;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+
+th:first-child {
+  border-top-left-radius:3px;
+}
+ 
+th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+  
+tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom: 1px solid #C1C3D1;
+  color:#666B85;
+  font-size:16px;
+  font-weight:normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+ 
+tr:hover td {
+  background:#4E5066;
+  color:#FFFFFF;
+  border-top: 1px solid #22262e;
+}
+ 
+tr:first-child {
+  border-top:none;
+}
+
+tr:last-child {
+  border-bottom:none;
+}
+ 
+tr:nth-child(odd) td {
+  background:#EBEBEB;
+}
+ 
+tr:nth-child(odd):hover td {
+  background:#4E5066;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+td {
+  background:#FFFFFF;
+  padding:20px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+th.text-left {
+  text-align: left;
+}
+
+th.text-center {
+  text-align: center;
+}
+
+th.text-right {
+  text-align: right;
+}
+
+td.text-left {
+  text-align: left;
+}
+
+td.text-center {
+  text-align: center;
+}
+
+td.text-right {
+  text-align: right;
+}
+
+
+  </style>
+
+  
+ <div class="container mt-2"> <!--m - for classes that set margin.t - for classes that set margin-top or padding-top.5 - (by default) for classes that set the margin or padding to $spacer * 3 -->
+<!-- Table strts Here -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      
+      <th scope="col">Placeholder</th>
+      <th scope="col">Value</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+  <!-- Form starts Here -->
+    <form action="makepdf.php" method="post" enctype="multipart/form-data" >
+      <td>Comapny_Name</td>
+      <td> <input type="text" name="cname" class="form-control" value="Damodar IT Solutions Pvt. Ltd" required></td>
+    </tr>
+    <tr>
+    
+      <td>Current_Date</td>
+      <td><input type="date" name="cdate" id="cdates"class="form-control" placeholder="Enter Current_Date" required></td>
+    </tr>
+    <tr>
+      
+      <td>Employee_Name</td>
+      <td><input type="text" name="ename" id="enames" class="form-control" placeholder="Enter Employee_Name" required></td>
+    </tr>
+    <tr>
+      
+      <td>Job_Title</td>
+      <td>
+      <div class="form-group row">
+
+    <div class="col-sm-10">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="jtitle" id="inlineRadio1" value="Full Time">
+            <label class="form-check-label" for="inlineRadio1">Full Time</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="jtitle" id="inlineRadio2" value="Part Time">
+            <label class="form-check-label" for="inlineRadio2">Part Time</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="jtitle" id="inlineRadio3" value="Intern">
+            <label class="form-check-label" for="inlineRadio3">Intern</label>
+        </div>
+    </div>
+</div>
+</td>
+    </tr>
+    <tr>
+      
+      <td>Annual_CTC</td>
+      <td><input type="text" name="actc" id="actcs" class="form-control" placeholder="Enter Annual_CTC" required></td>
+    </tr>
+    <tr>
+      
+      <td>Manager_Name</td>
+      <td><input type="text" name="mname" id="mnames" class="form-control" placeholder="Enter Manager_Name" required></td>
+    </tr>
+    <tr>
+      
+      <td>Starting_Date</td>
+      <td><input type="date" name="sdate" id="sdates" class="form-control" placeholder="Enter Starting_Date" required></td>
+    </tr>
+    <tr>
+      
+      <td>Acceptance_Last_Date</td>
+      <td><input type="date" name="adate" id="adates" class="form-control" placeholder="Enter Acceptance_Last_Date" required></td>
+    </tr>
+    <tr>
+
+      <td>HR_Name</td>
+      <td><input type="text" name="hname" id="hnames" class="form-control" placeholder="Enter HR_Name" required></td>
+    </tr>
+   <tr>
+    <td>Format </td>
+<td><div class="custom-file">
+  <input  type="file" name="forma" class="custom-file-input"  id="customFileLangHTML">
+  <label class="custom-file-label" id="formates"for="customFileLangHTML" data-browse="Choose file">Choose File</label>
+</div>
+</td>
+</tr>
+  </tbody>
+</table>
+
+</div>
+<div  id="annexure" style="display: none;">
+  <br>
+  <textarea class="form-control"  width="100px" height="300px"name="annexures" ></textarea><br>
+  <!-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script>tinymce.init({selector:'textarea'});</script> -->
+ 
+   <script>tinymce.init({ selector:'textarea',
+    content_css: "/mycontent.css",
+    content_style: "body { font-size: 20px; }"
+   });
+ 
+</script>
+</div>
+
+<input type="button" class="btn btn-success" value="Write Annexure"onclick="annexure()">
+<br><br>
+<div class="col-md-12 text-center">
+<button type="submit" name="btn" class="btn btn-info" id="btns" onclick="clear()">Submit the form</button>
+</div>
+    <br>
+    <br>
+    </form>
+  <!-- Form ends Here -->
+ 
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript">
+function clear(){
+  document.getElementById("enames").value="";
+        document.getElementById("cdates").value="";
+        document.getElementById("actcs").value="";
+        document.getElementById("mnames").value="";
+        document.getElementById("sdates").value="";
+        document.getElementById("adates").value="";
+        document.getElementById("hnames").value="";
+        document.getElementById("formates").value=""; 
+}
+$(document).ready( function(){
+ 
+       //To varify whether session is set or not 
+    $.ajax({
+        type : 'GET',
+        url : 'session.php',
+        data: {
+            user : ' session is set',
+
+              },
+        success : function(data){
+              alert(data);
+        },
+        error : function(XMLHttpRequest, textStatus, errorThrown) 
+        {
+          alert ("Error Occured");}
+                
+                 });
+        
+
+});
+
+function annexure(){
+  document.getElementById("annexure").style.display="block";
+}
+
+</script>
+</body>
+</html>
